@@ -1,0 +1,81 @@
+{
+    "name": "vx-notepads",
+    "displayName": "VX Notepads",
+    "description": "A notepad panel for VS Code",
+    "version": "1.0.1",
+    "publisher": "DeepakPujari",
+    "engines": {
+        "vscode": "^1.75.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "contributes": {
+        "viewsContainers": {
+            "activitybar": [
+                {
+                    "id": "notepads",
+                    "title": "VX Notepads",
+                    "icon": "resources/notepads-icon.png"
+                }
+            ]
+        },
+        "views": {
+            "notepads": [
+                {
+                    "id": "notepads",
+                    "name": "Notes"
+                }
+            ]
+        },
+        "commands": [
+            {
+                "command": "notepads.addNote",
+                "title": "Add Note",
+                "icon": "$(add)"
+            },
+            {
+                "command": "notepads.openNote",
+                "title": "Open Note"
+            },
+            {
+                "command": "notepads.deleteNote",
+                "title": "Delete Note",
+                "icon": "$(trash)"
+            },
+            {
+                "command": "notepads.renameNote",
+                "title": "Rename Note",
+                "icon": "$(edit)"
+            }
+        ],
+        "menus": {
+            "view/title": [
+                {
+                    "command": "notepads.addNote",
+                    "when": "view == notepads",
+                    "group": "navigation"
+                }
+            ],
+            "view/item/context": [
+                {
+                    "command": "notepads.renameNote",
+                    "when": "view == notepads",
+                    "group": "inline"
+                },
+                {
+                    "command": "notepads.deleteNote",
+                    "when": "view == notepads",
+                    "group": "inline"
+                }
+            ]
+        }
+    },
+    "activationEvents": [
+        "onView:notepads"
+    ],
+    "main": "./extension.js",
+    "devDependencies": {
+        "@types/vscode": "^1.75.0"
+    }
+}

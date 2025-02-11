@@ -2,17 +2,27 @@
     "name": "vx-notepads",
     "displayName": "VX Notepads",
     "description": "A simple note taking extension, save - ideas, snippets, and inspirations as you code. Because every great project starts with a single note.",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "publisher": "DeepakPujari",
     "repository": {
-		"type": "git",
-		"url": "https://github.com/deepaksp/vx-notepads"
-	},
+        "type": "git",
+        "url": "https://github.com/deepaksp/vx-notepads"
+    },
     "engines": {
         "vscode": "^1.75.0"
     },
+    "icon": "resources/icon.png",
     "categories": [
         "Other"
+    ],
+    "keywords": [
+        "notes",
+        "developer",
+        "productivity",
+        "notepad",
+        "quick notes",
+        "vscode",
+        "coding notes"
     ],
     "contributes": {
         "viewsContainers": {

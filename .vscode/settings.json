@@ -1,0 +1,22 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/node_modules": true,
+        ".idea": true,
+        "*-lock.json": true,
+        "*.lock": true,
+        "bootstrap": true,
+        ".env.example": true,
+        ".gitattributes": true,
+        ".styleci.yml": true,
+        "main.yml": true,
+        "wp-admin": true,
+        ".vscode": true,
+        ".vxnotes": true
+    }
+}

@@ -12,6 +12,14 @@ function activate(context) {
         fs.mkdirSync(notesFolder, { recursive: true });
     }
 
+    // Add .vxnotes to files.exclude setting
+    const config = vscode.workspace.getConfiguration('files');
+    const exclude = config.get('exclude');
+    if (!exclude['.vxnotes']) {
+        exclude['.vxnotes'] = true;
+        config.update('exclude', exclude, vscode.ConfigurationTarget.Workspace);
+    }
+
     const noteProvider = new NoteTreeProvider(notesFolder);
     vscode.window.registerTreeDataProvider('notepads', noteProvider);
 
@@ -57,6 +65,7 @@ class NoteTreeProvider {
                 title: 'Create New Note'
             };
             createNoteItem.iconPath = new vscode.ThemeIcon('add');
+            createNoteItem.contextValue = 'createNote';
             return [createNoteItem];
         }
 
@@ -71,6 +80,7 @@ class NoteTreeProvider {
                 title: 'Open Note',
                 arguments: [treeItem]
             };
+            treeItem.contextValue = 'note';
             return treeItem;
         });
     }

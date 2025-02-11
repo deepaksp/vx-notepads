@@ -1,7 +1,7 @@
 {
     "name": "vx-notepads",
     "displayName": "VX Notepads",
-    "description": "A notepad panel for VS Code",
+    "description": "A simple note taking extension, save - ideas, snippets, and inspirations as you code. Because every great project starts with a single note.",
     "version": "1.0.2",
     "publisher": "DeepakPujari",
     "repository": {

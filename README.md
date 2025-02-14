@@ -1,6 +1,6 @@
- # VX Notepads
+# VX Notepads
 
-A simple note-taking extension for VS Code that helps you save ideas, snippets, and inspirations as you code. Because every great project starts with a single note.
+A simple note-taking extension for VS Code that helps you save ideas, snippets, and inspirations as you code - with full Markdown support and flexible storage options. Store your notes either locally within your project or globally for access across all workspaces. Because every great project starts with a single note.
 
 
 ![Screenshot 1](https://raw.githubusercontent.com/deepaksp/vx-notepads/refs/heads/main/screenshoots/1%20(1).png)
@@ -11,29 +11,40 @@ A simple note-taking extension for VS Code that helps you save ideas, snippets, 
 ## Features
 
 - 📝 Quick note creation directly from the activity bar
-- 🗂️ Organized notes storage in a hidden `.vxnotes` folder
+- 🗂️ Dual storage options:
+  - Local workspace storage (`.vxnotes` folder)
+  - Global storage for project-independent notes
 - 📌 Easy access to all your notes in one place
 - ✏️ Rename and edit notes with ease
 - 🗑️ Delete notes you no longer need
+- ✨ Full Markdown support with:
+  - Syntax highlighting
+  - Preview mode
+  - Headers, lists, and code blocks
+  - Tables and links
+  - And more!
 
 ## Usage
 
 1. Click on the VX Notepads icon in the activity bar (side panel)
 2. Click the '+' icon to create a new note
 3. Your note will open in the editor
-4. Write your thoughts, code snippets, or ideas
+4. Write your thoughts using Markdown syntax
 5. Notes are automatically saved
 
 ## Managing Notes
 
 - **Create Note**: Click the '+' icon in the VX Notepads panel
+- **Storage Location**: Choose between:
+  - Workspace: Saves in project's `.vxnotes` folder (this is done automatically)
+  - Global: Saves in your user directory
 - **Open Note**: Click on any note in the list
 - **Rename Note**: Click the edit icon (pencil) next to the note
 - **Delete Note**: Click the trash icon next to the note
 
 ## Storage
 
-All notes are stored in a `.vxnotes` folder in your workspace root directory. The folder is automatically hidden from the VS Code explorer to keep your workspace clean.
+All Local notes are stored in a `.vxnotes` folder in your workspace root directory. The folder is automatically hidden from the VS Code explorer to keep your workspace clean. Global notes are stored in user defind location and can be changed anytime.
 
 ## Installation
 

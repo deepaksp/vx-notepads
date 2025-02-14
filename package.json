@@ -1,8 +1,8 @@
 {
     "name": "vx-notepads",
-    "displayName": "VX Notepads",
-    "description": "A simple note taking extension, save - ideas, snippets, and inspirations as you code. Because every great project starts with a single note.",
-    "version": "1.0.3",
+    "displayName": "VX Notepads - Take Notes locally and globally with Markdown",
+    "description": "A simple Note taking extension, save - ideas, snippets, and inspirations as you code. Because every great project starts with a single note.",
+    "version": "1.1.2",
     "publisher": "DeepakPujari",
     "repository": {
         "type": "git",
@@ -37,8 +37,14 @@
         "views": {
             "notepads": [
                 {
-                    "id": "notepads",
+                    "id": "localNotepads",
                     "name": "Notes",
+                    "type": "tree",
+                    "visibility": "collapsed"
+                },
+                {
+                    "id": "globalNotepads",
+                    "name": "Global Notes",
                     "type": "tree",
                     "visibility": "collapsed"
                 }
@@ -46,45 +52,71 @@
         },
         "commands": [
             {
-                "command": "notepads.addNote",
-                "title": "Add Note",
+                "command": "notepads.addLocalNote",
+                "title": "VX Notepads: New Note",
                 "icon": "$(add)"
             },
             {
-                "command": "notepads.openNote",
-                "title": "Open Note"
+                "command": "notepads.addGlobalNote",
+                "title": "VX Notepads: New Global Note",
+                "icon": "$(add)"
             },
             {
                 "command": "notepads.deleteNote",
-                "title": "Delete Note",
+                "title": "VX Notepads: Delete Note",
                 "icon": "$(trash)"
             },
             {
                 "command": "notepads.renameNote",
-                "title": "Rename Note",
+                "title": "VX Notepads: Rename Note",
                 "icon": "$(edit)"
+            },
+            {
+                "command": "notepads.selectGlobalLocation",
+                "title": "VX Notepads: Change Global Notes Location",
+                "icon": "$(folder)"
             }
         ],
         "menus": {
             "view/title": [
                 {
-                    "command": "notepads.addNote",
-                    "when": "view == notepads",
-                    "group": "navigation"
+                    "command": "notepads.addLocalNote",
+                    "when": "view == localNotepads",
+                    "group": "navigation@1"
+                },
+                {
+                    "command": "notepads.addGlobalNote",
+                    "when": "view == globalNotepads && config.notepads.globalNotesPath != ''",
+                    "group": "navigation@1"
                 }
             ],
             "view/item/context": [
                 {
-                    "command": "notepads.renameNote",
-                    "when": "view == notepads && viewItem == note",
-                    "group": "inline"
+                    "command": "notepads.deleteNote",
+                    "when": "viewItem == note",
+                    "group": "inline@1"
                 },
                 {
-                    "command": "notepads.deleteNote",
-                    "when": "view == notepads && viewItem == note",
-                    "group": "inline"
+                    "command": "notepads.renameNote",
+                    "when": "viewItem == note",
+                    "group": "inline@2"
+                },
+                {
+                    "command": "notepads.selectGlobalLocation",
+                    "when": "viewItem == emptyGlobal",
+                    "group": "1_location"
                 }
             ]
+        },
+        "configuration": {
+            "title": "Notepads",
+            "properties": {
+                "notepads.globalNotesPath": {
+                    "type": "string",
+                    "default": null,
+                    "description": "Path to store global notes"
+                }
+            }
         }
     },
     "activationEvents": [
